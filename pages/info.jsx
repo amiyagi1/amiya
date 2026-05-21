@@ -80,14 +80,14 @@ const Bio = memo(() => (
     </h2>
     <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8">
       {[
-        "Richard Mattka is an Award-winning Creative Director...",
-        "Richard has worked with some of the top teams and brands...",
+        "Amiya is an Award-winning Creative Director...",
+        "Amiya has worked with some of the top teams and brands...",
         "His work has been recognized with Webbys, FWAs, Awwwards...",
-        "As a developer, Richard's expertise includes React, Vue, javascript...",
+        "As a developer, Amiya's expertise includes React, Vue, javascript...",
         "For video processing he has scripting in ffMPEG, Blender...",
-        "Richard is also a regular writer for Net Magazine...",
+        "Amiya is also a regular writer for Net Magazine...",
         "'The Art of Shaders', his latest full-length programming book...",
-        "Richard's professional artwork explores a wide range of fractal works...",
+        "Amiya's professional artwork explores a wide range of fractal works...",
         "Contact me for availability for freelance work...",
       ].map((text, index) => (
         <p

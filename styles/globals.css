@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+  font-family: "PPMonumentExtended-Black";
+  src: url("/fonts/PPMonumentExtended-Black.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMonumentExtended-Regular";
+  src: url("/fonts/PPMonumentExtended-Regular.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMonumentExtended-Light";
+  src: url("/fonts/PPMonumentExtended-Light.otf");
+  font-display: swap;
+}
+
+#__next {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@layer base {
+  body {
+    @apply bg-[#000000] text-[#E5E7EB] w-full h-full;
+  }
+
+  html {
+    @apply w-full h-full;
+  }
+}

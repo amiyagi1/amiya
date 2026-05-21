@@ -1,0 +1,50 @@
+{
+  "name": "y",
+  "version": "y",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@cloudinary/react": "^1.13.1",
+    "@cloudinary/url-gen": "^1.21.0",
+    "@react-three/drei": "^9.120.0",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/postprocessing": "^2.16.3",
+    "@studio-freight/lenis": "^1.0.42",
+    "aos": "^3.0.0-beta.6",
+    "clsx": "^2.1.1",
+    "framer-motion": "^6.3.4",
+    "gsap": "^3.15.0",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.460.0",
+    "next": "^16.2.6",
+    "next-cloudinary": "^6.16.0",
+    "react": "^18.2.0",
+    "react-3d-hover": "^1.1.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.3.1",
+    "react-intersection-observer": "^9.13.1",
+    "react-typed": "^1.2.0",
+    "simplex-noise": "^4.0.3",
+    "tailwind-merge": "^2.4.0",
+    "three": "^0.171.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "eslint": "8.16.0",
+    "eslint-config-next": "^13.0.0",
+    "postcss": "^8.5.13",
+    "tailwindcss": "3"
+  },
+  "cacheDirectories": [
+    "node_modules/",
+    ".next/cache/"
+  ],
+  "description": "pf",
+  "main": "index.js",
+  "license": "MIT"
+}

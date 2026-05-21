@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "title": "WazirX | NFT | Marketplace",
+    "subtitle": "3d animation experience",
+    "video": {
+      "publicId": "portfolio/1_batxc6"
+    },
+    "poster": "/assets/works/web/webi1.webp",
+    "client": "AKQA | SONY INTERACTIVE ENTERTAINMENT",
+    "role": "CREATIVE TECHNOLOGIST | LEAD DEVELOPER",
+    "stats": "5.1 million copies sold during its first week.",
+    "description": "Santa Monica Studio developed the sequel to the critically acclaimed God of War (2018).",
+    "quote": "Kratos and Atreus must journey to each of the Nine Realms in search of answers as Asgardian forces prepare for a prophesied battle that will end the world.",
+    "media": [
+      "/assets/works/web/webi.webp",
+      "/assets/works/web/webi1.webp",
+      "/assets/works/web/webi2.webp",
+      "/assets/works/web/webi3.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "SONY | GOD OF WAR | RAGNAROK",
+    "subtitle": "Another Subtitle",
+    "video": {
+      "publicId": "portfolio/1_batxc6"
+    },
+    "poster": "/assets/works/eth/ethp.webp",
+    "client": "Another Client",
+    "role": "Another Role",
+    "stats": "Another Stat",
+    "description": "Another Description",
+    "quote": "Another Quote",
+    "media": [
+      "/assets/works/eth/ethp.webp",
+      "/assets/works/eth/ethp1.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Another Project",
+    "subtitle": "Another Subtitle",
+    "video": {
+      "publicId": "portfolio/1_batxc6"
+    },
+    "poster": "/assets/works/cyber/cyber.webp",
+    "client": "Another Client",
+    "role": "Another Role",
+    "stats": "Another Stat",
+    "description": "Another Description",
+    "quote": "Another Quote",
+    "media": [
+      "/assets/works/cyber/cyber.webp",
+      "/assets/works/cyber/cyberi1.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Another Project",
+    "subtitle": "Another Subtitle",
+    "video": {
+      "publicId": "portfolio/1_batxc6"
+    },
+    "poster": "/assets/works/room/room.webp",
+    "client": "Another Client",
+    "role": "Another Role",
+    "stats": "Another Stat",
+    "description": "Another Description",
+    "quote": "Another Quote",
+    "media": [
+      "/assets/works/room/room.webp",
+      "/assets/works/room/room1.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Another Project",
+    "subtitle": "Another Subtitle",
+    "video": {
+      "publicId": "portfolio/1_batxc6"
+    },
+    "poster": "/assets/works/type.webp",
+    "client": "Another Client",
+    "role": "Another Role",
+    "stats": "Another Stat",
+    "description": "Another Description",
+    "quote": "Another Quote",
+    "media": [
+      "/assets/works/type.webp"
+    ]
+  }
+]

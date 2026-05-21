@@ -113,19 +113,7 @@ const AwardsSection = memo(() => {
       <h2 className="mb-8 text-center text-sm tracking-[0.3em] text-amiya">
         [ AWARDS | RECOGNITION ]
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-        {awards.map((imageUrl, index) => (
-          <div key={imageUrl} className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-sm">
-            <Image
-              src={imageUrl}
-              alt={`Award ${index + 1}`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            />
-          </div>
-        ))}
-      </div>
+   
     </div>
   );
 });

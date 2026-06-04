@@ -3,14 +3,14 @@ import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 
 const GreetingText = memo(() => (
-  <p className="font-omiofont3 whitespace-nowrap text-[11px] lg:tracking-[1.55em] sm:text-[12px] sm:tracking-[0.5em] lg:text-[13px] text-[#7c9ca3] uppercase">
+  <p className="font-omiofont3 whitespace-nowrap text-[11px] lg:tracking-[1.8em] sm:text-[12px] sm:tracking-[0.5em] lg:text-[13px] text-[#7c9ca3] uppercase">
     DESIGNER | DEVELOPER | CREATOR
   </p>
 ));
 GreetingText.displayName = 'GreetingText';
 
 const NameText = memo(() => (
-  <h1 className="font-omiofont3 uppercase whitespace-nowrap text-[10vw] tracking-[0.18em] sm:text-[11vw] lg:text-[5.2rem] lg:tracking-[0.52em] text-[#89aab0]/70">
+  <h1 className="font-omiofont3 uppercase whitespace-nowrap text-[10vw] tracking-[0.18em] sm:text-[11vw] lg:text-[5rem] lg:tracking-[0.2em] text-[#89aab0]/70">
     AMIYA RANJAN 
   </h1>
 ));

@@ -1,4 +1,3 @@
-// _app.js
 import Navbar from "../components/Navbar";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
@@ -9,13 +8,11 @@ import SmoothScroll from "../components/Smooth";
 import TopLoader from "../components/TopLoader";
 import dynamic from "next/dynamic";
 
-// Preload immediately — don't lazy load on first click
 const Gyroid = dynamic(() => import("../components/Gyroid"), {
   ssr: false,
   loading: () => null,
 });
 
-// Eagerly preload the chunk so it's ready before user clicks anything
 if (typeof window !== "undefined") {
   import("../components/Gyroid");
 }
@@ -49,26 +46,39 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   useEffect(() => {
-    AOS.init({ once: false, duration: 900, easing: "ease-in-out" });
+    AOS.init({
+      once: false,
+      duration: 900,
+      easing: "ease-in-out",
+      // Let Lenis drive scroll position — AOS must read from window, not
+      // a custom scroll container, otherwise its IntersectionObserver
+      // never fires because the real scrollTop stays 0.
+      startEvent: "DOMContentLoaded",
+    });
+
     const handleRouteChange = () => {
-      setTimeout(() => {
-        AOS.refreshHard();
-        if (lenisRef.current) {
-          lenisRef.current.resize();
-          lenisRef.current.scrollTo(0, { immediate: true });
-        } else {
-          window.scrollTo(0, 0);
-        }
-      }, 100);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const lenis = lenisRef.current;
+          if (lenis) {
+            lenis.scrollTo(0, { immediate: true });
+            lenis.resize();
+          } else {
+            window.scrollTo(0, 0);
+          }
+          // refreshHard after scroll reset so AOS re-measures correct positions
+          AOS.refreshHard();
+        });
+      });
     };
+
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => router.events.off("routeChangeComplete", handleRouteChange);
   }, [router.events]);
 
   return (
     <>
-          {/* fullscreen entry loader — exits once Gyroid is ready */}
-      <TopLoader />     {/* route change progress bar */}
+      <TopLoader />
       <Gyroid />
       <SmoothScroll ref={lenisRef}>
         <Navbar />

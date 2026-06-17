@@ -7,49 +7,58 @@ const SmoothScroll = forwardRef(({ children }, ref) => {
       lerp: 0.08,
       smoothWheel: true,
       smoothTouch: false,
+      wrapper: window,
+      content: document.documentElement,
     });
 
-    if (ref) {
-      ref.current = lenis;
-    }
+    if (ref) ref.current = lenis;
 
-    let rafId = 0;
+    // Expose stop/start for Navbar mobile menu (avoids overflow:hidden on body)
+    window.__lenisStop  = () => lenis.stop();
+    window.__lenisStart = () => lenis.start();
+
+    // Emit scroll position so Navbar can read real scroll (window.scrollY stays 0 with Lenis)
+    lenis.on("scroll", ({ scroll }) => {
+      window.dispatchEvent(new CustomEvent("lenis-scroll", { detail: { scroll } }));
+    });
+
+    let rafId   = 0;
+    let lastTime = -1;
 
     const raf = (time) => {
-      lenis.raf(time);
-      rafId = window.requestAnimationFrame(raf);
+      if (time !== lastTime) {
+        lenis.raf(time);
+        lastTime = time;
+      }
+      rafId = requestAnimationFrame(raf);
     };
 
-    rafId = window.requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
-    const handleResize = () => {
-      lenis.resize();
+    let resizeTimer = 0;
+    const scheduleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => lenis.resize(), 150);
     };
 
-    const resizeObserver = new ResizeObserver(() => {
-      lenis.resize();
-    });
-
-    resizeObserver.observe(document.body);
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("load", handleResize);
+    const ro = new ResizeObserver(scheduleResize);
+    ro.observe(document.documentElement);
+    window.addEventListener("resize", scheduleResize);
 
     return () => {
-      window.cancelAnimationFrame(rafId);
-      resizeObserver.disconnect();
+      cancelAnimationFrame(rafId);
+      clearTimeout(resizeTimer);
+      ro.disconnect();
+      window.removeEventListener("resize", scheduleResize);
+      window.__lenisStop  = null;
+      window.__lenisStart = null;
       lenis.destroy();
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("load", handleResize);
-
-      if (ref) {
-        ref.current = null;
-      }
+      if (ref) ref.current = null;
     };
   }, [ref]);
 
   return children;
 });
 
-SmoothScroll.displayName = 'SmoothScroll';
-
+SmoothScroll.displayName = "SmoothScroll";
 export default SmoothScroll;

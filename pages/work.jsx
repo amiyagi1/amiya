@@ -1,6 +1,3 @@
-// pages/work.js  (PortfolioPage)
-// Removed the local <Gyroid> instance — the global one in _app.js handles it.
-// _app.js automatically calls setPage('work') when this route is active.
 
 import { memo, useEffect, useState, useRef } from "react";
 import Image from "next/image";
